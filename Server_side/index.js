@@ -15,6 +15,10 @@ app.use((req, res, next) => {
 
 mongoose.connect(`mongodb://127.0.0.1:27017/Nike`)
 
+app.get('/', (req, res) => {
+  res.send('Hello from the home route');
+});
+
 app.post('/sign-up',(req, res) => {
     UserModel.create(req.body)
     .then(users => res.json(users))
@@ -42,7 +46,4 @@ app.post('/login',(req, res) => {
     
 })
 
-
-
-
-export default app;
+module.exports = app;
