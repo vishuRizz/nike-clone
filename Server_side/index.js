@@ -8,10 +8,11 @@ app.use(cors())
 // Set Content Security Policy headers
 app.use((req, res, next) => {
   res.setHeader('Content-Security-Policy', 
-    "default-src 'none'; script-src 'self' https://vercel.live; font-src 'self' https://nike-api-five.vercel.app; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    "default-src 'self'; script-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
   );
-  next(); // Continue to the next middleware or route handler
+  next();
 });
+
 
 mongoose.connect(`mongodb://127.0.0.1:27017/Nike`)
 
