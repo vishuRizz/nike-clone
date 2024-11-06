@@ -14,10 +14,10 @@ app.use((req, res, next) => {
 });
 
 
-mongoose.connect(`mongodb://127.0.0.1:27017/Nike`)
+mongoose.connect(`mongodb+srv://vishurizz01:RzfgxKDYAOSSooKq@cluster0.7ozbuch.mongodb.net/nike`)
 
 app.get('/', (req, res) => {
-  res.send('Hello from the home route');
+  res.send('ahh request cuming aahhhh!!');
 });
 
 app.post('/sign-up',(req, res) => {
@@ -47,4 +47,7 @@ app.post('/login',(req, res) => {
     
 })
 
-module.exports = app;
+// module.exports = app;
+app.listen(3000, () => {
+    console.log('Server is running on port 3000')
+})
